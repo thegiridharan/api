@@ -26,15 +26,15 @@ export default function FetchnDisplay() {
     if (loading) return <p>Loading..</p>
     if (error) return <p>Error: {error}</p>
     return(
-        <>
-            <p className="font-semibold text-[20px] m-[20px]">Fetched Data</p>
+        <div className="bg-gray-100">
+            <p className="font-semibold text-[20px] p-[20px]">Fetched Data</p>
             {data.slice(0, 10).map((datum, index) => (
-                <div key={index} className="mx-[20px] my-[20px] p-[10px] outline-1 outline-black/20 rounded-[4px]">
+                <div key={index} className="mx-[20px] my-[20px] p-[10px] outline-1 outline-black/20 rounded-[4px] bg-white">
                     <p>ID: {datum.id}</p>
                     <p>Title: {datum.title}</p>
                     <p>Body: {datum.body}</p>
                 </div>
             ))}
-        </>
+        </div>
     );
 }
